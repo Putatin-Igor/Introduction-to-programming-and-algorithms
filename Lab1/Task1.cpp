@@ -1,9 +1,10 @@
 #include<iostream>
 #include<clocale>
+#include<iomanip>
 using namespace std;
 int main() {
 	setlocale(LC_ALL, "RU");
-	double radius;
+	double radius;//Длина радиуса и длина окружности могут быть нецелыми
 	double length;
 	while (true) { //Цикл для проверки правильности введенного значения
 		cout << "Введите радиус: ";
@@ -18,6 +19,6 @@ int main() {
 		}
 	}
 	length = 2 * 3.14 * radius; //Ищем длину
-	cout << length;
+	cout << fixed << setprecision(2) << length;
 	return 0;
 }

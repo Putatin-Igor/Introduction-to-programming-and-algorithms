@@ -6,10 +6,10 @@ using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Russian");
-    double rubles, dollars, euro;
-    double number;
-    string valuta;
-    while (true) {
+    double rubles, dollars, euro;//Доллары, евро и рубли могут быть нецелыми
+    double number;//дополнительная переменная для ввода кол-ва валюты
+    string valuta;//название валюты
+    while (true) {//проверка правильности введеной валюты
         cout << "Введите название валюты: ";
         cin >> valuta;
         if (valuta == "rubles" || valuta == "dollars" || valuta == "euro") {
@@ -19,7 +19,7 @@ int main() {
             cout << "Ошибка ввода.\n";
         }
     }
-    while (true) {
+    while (true) {//проверка правильности введения кол-ва валюты
         cout << "Введите количество: ";
         cin >> number;
 
@@ -32,17 +32,17 @@ int main() {
             break;
         }
     }
-    if (valuta == "rubles") {
+    if (valuta == "rubles") {//если пользователь ввел рубли
         rubles = number;
         dollars = rubles / 83.95;
         euro = rubles / 97.46;
     }
-    else if (valuta == "dollars") {
+    else if (valuta == "dollars") {//если пользователь ввел доллары
         dollars = number;
         rubles = dollars * 83.95;
         euro = rubles / 97.46;
     }
-    else if (valuta == "euro") {
+    else if (valuta == "euro") {//если пользователь ввел евро
         euro = number;
         rubles = euro * 97.46;
         dollars = rubles / 83.95;
