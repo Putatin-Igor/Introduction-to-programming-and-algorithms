@@ -15,14 +15,14 @@ int main() {
 	}
 	double yFirst = atan(a);
 	double yMax0 = yFirst;
-	cout << "\n+----------+-----------+" << std::endl;
-	cout << "| x | arctg(x) |" << std::endl;
-	cout << "+----------+-----------+" << std::endl;
+	cout << "\n+----------+-----------+" << endl;
+	cout << "| x | arctg(x) |" << endl;
+	cout << "+----------+-----------+" << endl;
 	cout << fixed << setprecision(4);
 	for (double x = a; x <= b + 1e-9;x += h) {
 		double y = atan(x);
-		std::cout << "| " << std::setw(7) << x << " | "
-			<< std::setw(9) << y << " |" << std::endl;
+		cout << "| " << setw(7) << x << " | "
+			<< setw(9) << y << " |" << endl;
 		if (abs(y) < abs(yMax0)) {//сравниваем абсолютные значения, чтобы понять, какое из чисел ближе к 0
 			yMax0 = y;
 		}
